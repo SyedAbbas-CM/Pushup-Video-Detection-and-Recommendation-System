@@ -3,10 +3,10 @@ An AI-powered push-up form detection and correction system using deep learning t
 
 Steps:
 
-Gather data: Completed
+Gather data: Completed\n
 Collect a dataset of videos or images showing people performing push-ups in various positions and with different form quality. This dataset should be diverse in terms of body shapes, sizes, and camera angles. You might want to label the data with information such as whether the form is correct or incorrect, and what specific issues are present if the form is incorrect.
 
-Preprocess the data: Completed
+Preprocess the data: Completed\n
 Preprocess your data by resizing images, normalizing pixel values, and augmenting the dataset with techniques like rotations, flips, and translations. Split your dataset into training, validation, and test sets.
 
 Choose a model architecture:
@@ -30,7 +30,7 @@ Package your model and the associated code into a web or mobile application so t
 Different Model Approaches
 
 
-CNN-LSTM (our current approach):
+CNN-LSTM (our current approach):\n
 A combination of Convolutional Neural Networks (CNNs) and Long Short-Term Memory (LSTM) networks can be used for this task. The CNN is responsible for extracting spatial features from the images, while the LSTM captures the temporal relationships between frames. This approach is particularly suitable for video-based action recognition tasks.
 
 3D CNN:
