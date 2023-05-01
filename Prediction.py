@@ -2,6 +2,7 @@ import torch
 import numpy as np
 import json
 from model2 import KeyPointsTransformer
+from collections import Counter
 
 def load_data_from_json(json_path):
     with open(json_path, "r") as f:
@@ -33,6 +34,19 @@ def predict(model, sequence):
     prediction = torch.argmax(output, dim=1).item()
     return prediction
 
+def simplify_output(output):
+    # Extract the class predictions from the output dictionary
+    class_predictions = [frame['class'] for frame in output]
+
+    # Count the occurrences of each class
+    class_counts = Counter(class_predictions)
+
+    # Find the most common class
+    most_common_class, _ = class_counts.most_common(1)[0]
+
+    # Return the simplified output
+    return most_common_class
+
 # Load the model
 model_path = "D:/AIPROJECT2/models/trained_model2.pth"
 num_classes = 6
@@ -55,4 +69,6 @@ for i, sequence in enumerate(sequences):
     prediction = predict(model, sequence)
     predictions.append({"sequence": i + 1, "class": prediction})
 
-print(predictions)
+simplified_output = simplify_output(predictions)
+
+print(simplified_output)
