@@ -49,9 +49,9 @@ def process_video(input_video_path, output_folder, max_frames=1000, target_size=
     # Release the video file.
     video.release()
 
-videos_folder = "D:\\AIPROJECT2\\preprocessed_data\\NonExcerciseVideos"
-output_base_folder = "D:\\AIPROJECT2\\preprocessed_data\\ProcessedVideos"
-max_frames = 650
+videos_folder = "D:\\AIPROJECT2\\upload"
+output_base_folder = "D:\\AIPROJECT2\\upload\\uploaded_frames"
+max_frames = 350
 
 for video_file in os.listdir(videos_folder):
     input_video_path = os.path.join(videos_folder, video_file)
